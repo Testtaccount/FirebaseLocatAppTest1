@@ -4,11 +4,18 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.*;
 
 public class ParentCodeActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -16,7 +23,7 @@ public class ParentCodeActivity extends AppCompatActivity implements View.OnClic
 
     private TextView latTv;
     private TextView lngTv;
-    private LatLngReceiver latLngReceiver;
+//    private LatLngReceiver latLngReceiver;
 
     private Button codeEnteredBtn;
 
@@ -34,21 +41,21 @@ public class ParentCodeActivity extends AppCompatActivity implements View.OnClic
         codeTv.setText(getIntent().getStringExtra("code"));
 
 
-        latLngReceiver = new LatLngReceiver();
-
-        // регистрируем BroadcastReceiver
-        IntentFilter intentFilter = new IntentFilter(LocatAppIntentService.ACTION);
-        intentFilter.addCategory(Intent.CATEGORY_DEFAULT);
-        registerReceiver(latLngReceiver, intentFilter);
+//        latLngReceiver = new LatLngReceiver();
+//
+//        // регистрируем BroadcastReceiver
+//        IntentFilter intentFilter = new IntentFilter(LocatAppIntentService.ACTION);
+//        intentFilter.addCategory(Intent.CATEGORY_DEFAULT);
+//        registerReceiver(latLngReceiver, intentFilter);
 
     }
 
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unregisterReceiver(latLngReceiver);
-    }
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        unregisterReceiver(latLngReceiver);
+//    }
 
 
     @Override
@@ -58,6 +65,10 @@ public class ParentCodeActivity extends AppCompatActivity implements View.OnClic
 
                 String kidId = getIntent().getStringExtra("kidId");
                 LocatAppIntentService.startActionGet(this, kidId);
+
+                Intent intent=new Intent(ParentCodeActivity.this,MapsActivity.class);
+                startActivity(intent);
+                finish();
 //
 //                Intent i = new Intent(this, LocationAppIntentService.class);
 //                // Add extras to the bundle
@@ -71,27 +82,31 @@ public class ParentCodeActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
-    private void updateUI(Intent intent) {
-
-        codeTv.setVisibility(View.GONE);
-        codeEnteredBtn.setVisibility(View.GONE);
-        latTv.setVisibility(View.VISIBLE);
-        lngTv.setVisibility(View.VISIBLE);
-        latTv.setText(Double.toString(intent.getDoubleExtra(LocatAppIntentService.EXTRA_KEY_LAT, 0)));
-        lngTv.setText(Double.toString(intent.getDoubleExtra(LocatAppIntentService.EXTRA_KEY_LNG, 0)));
 
 
 
+//    private void updateUI(Intent intent) {
+//
+//        codeTv.setVisibility(View.GONE);
+//        codeEnteredBtn.setVisibility(View.GONE);
+//        latTv.setVisibility(View.VISIBLE);
+//        lngTv.setVisibility(View.VISIBLE);
+//        latTv.setText(Double.toString(intent.getDoubleExtra(LocatAppIntentService.EXTRA_KEY_LAT, 0)));
+//        lngTv.setText(Double.toString(intent.getDoubleExtra(LocatAppIntentService.EXTRA_KEY_LNG, 0)));
+//
+//
+//
+//
+//    }
 
-    }
 
-    public class LatLngReceiver extends BroadcastReceiver {
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            updateUI(intent);
-        }
-    }
+//    public class LatLngReceiver extends BroadcastReceiver {
+//
+//        @Override
+//        public void onReceive(Context context, Intent intent) {
+//            updateUI(intent);
+//        }
+//    }
 
 
 }
