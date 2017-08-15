@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "796583464221",
-    "firebase_url": "https://fir-locatapptest1.firebaseio.com",
-    "project_id": "fir-locatapptest1",
-    "storage_bucket": "fir-locatapptest1.appspot.com"
+    "project_number": "506442926759",
+    "firebase_url": "https://fir-locatapptest1-fef4f.firebaseio.com",
+    "project_id": "fir-locatapptest1-fef4f",
+    "storage_bucket": "fir-locatapptest1-fef4f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:796583464221:android:a196ddae0c5e39ec",
+        "mobilesdk_app_id": "1:506442926759:android:a196ddae0c5e39ec",
         "android_client_info": {
           "package_name": "gsoft.am.firebaselocatapptest1"
         }
       },
       "oauth_client": [
         {
-          "client_id": "796583464221-so8hb57tui8p2053i9ue504kh0rto9d1.apps.googleusercontent.com",
+          "client_id": "506442926759-555lu8nikpd7q2b1e60rugfhd7i4093r.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "gsoft.am.firebaselocatapptest1",
@@ -23,13 +23,13 @@
           }
         },
         {
-          "client_id": "796583464221-g37pakghf6htsmaj43n9lv524i8m94oq.apps.googleusercontent.com",
+          "client_id": "506442926759-1r85b2ii7oq78qqbgkjekb5eluvhpulv.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDOdk8zTMzVgu_B2UqWKrhoHlzB2_GBkIA"
+          "current_key": "AIzaSyDr8GAhrEd7CmCnnECSQf58MN2X5OIh6PE"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "796583464221-g37pakghf6htsmaj43n9lv524i8m94oq.apps.googleusercontent.com",
+              "client_id": "506442926759-1r85b2ii7oq78qqbgkjekb5eluvhpulv.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
